@@ -8,6 +8,14 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>jandex-issue-module2</artifactId>
+  
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>jandex-issue-module1</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>

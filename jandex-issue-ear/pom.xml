@@ -9,6 +9,15 @@
   </parent>
   <artifactId>jandex-issue-ear</artifactId>
   <packaging>ear</packaging>
+  
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>jandex-issue-ejb</artifactId>
+      <version>${project.version}</version>
+      <type>ejb</type>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -16,6 +25,7 @@
         <artifactId>maven-ear-plugin</artifactId>
         <configuration>
           <version>7</version>
+          <defaultLibBundleDir>lib</defaultLibBundleDir>
         </configuration>
       </plugin>
     </plugins>
