@@ -24,7 +24,7 @@
     
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>jandex-issue-module2</artifactId>
+      <artifactId>jandex-issue-jdbc</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

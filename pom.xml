@@ -11,6 +11,7 @@
   <modules>
     <module>jandex-issue-module1</module>
     <module>jandex-issue-module2</module>
+    <module>jandex-issue-jdbc</module>
     <module>jandex-issue-ejb</module>
     <module>jandex-issue-ear</module>
   </modules>
