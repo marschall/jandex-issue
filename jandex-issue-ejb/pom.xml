@@ -13,7 +13,7 @@
   <dependencies>
     <dependency>
       <groupId>org.jboss.spec.javax.annotation</groupId>
-      <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+      <artifactId>jboss-annotations-api_1.3_spec</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -34,7 +34,7 @@
       <plugin>
         <artifactId>maven-ejb-plugin</artifactId>
         <configuration>
-          <ejbVersion>3.1</ejbVersion>
+          <ejbVersion>3.2</ejbVersion>
         </configuration>
       </plugin>
       <plugin>

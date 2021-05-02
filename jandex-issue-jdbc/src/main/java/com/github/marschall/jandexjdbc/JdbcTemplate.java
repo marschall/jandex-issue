@@ -3,6 +3,7 @@ package com.github.marschall.jandexjdbc;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import javax.sql.DataSource;
 
@@ -55,8 +56,7 @@ public class JdbcTemplate extends JdbcAccessor implements JdbcOperations {
   }
 
   @Override
-  public void setExceptionTranslator(
-          SQLExceptionTranslator exceptionTranslator) {
+  public void setExceptionTranslator(SQLExceptionTranslator exceptionTranslator) {
     this.delegate.setExceptionTranslator(exceptionTranslator);
   }
 
@@ -477,6 +477,30 @@ public class JdbcTemplate extends JdbcAccessor implements JdbcOperations {
   public Map<String, Object> call(CallableStatementCreator csc,
           List<SqlParameter> declaredParameters) throws DataAccessException {
     return this.delegate.call(csc, declaredParameters);
+  }
+
+  @Override
+  public <T> Stream<T> queryForStream(String sql, RowMapper<T> rowMapper)
+          throws DataAccessException {
+    return this.delegate.queryForStream(sql, rowMapper);
+  }
+
+  @Override
+  public <T> Stream<T> queryForStream(PreparedStatementCreator psc,
+          RowMapper<T> rowMapper) throws DataAccessException {
+    return this.delegate.queryForStream(psc, rowMapper);
+  }
+
+  @Override
+  public <T> Stream<T> queryForStream(String sql, PreparedStatementSetter pss,
+          RowMapper<T> rowMapper) throws DataAccessException {
+    return this.delegate.queryForStream(sql, pss, rowMapper);
+  }
+
+  @Override
+  public <T> Stream<T> queryForStream(String sql, RowMapper<T> rowMapper,
+          Object... args) throws DataAccessException {
+    return this.delegate.queryForStream(sql, rowMapper, args);
   }
 
 }
